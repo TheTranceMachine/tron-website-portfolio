@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+
+.bgImageRepeat {
+  background-image: url('/images/bckgr.png');
+  background-repeat: repeat ;
+}
