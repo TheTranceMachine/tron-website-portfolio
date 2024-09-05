@@ -32,7 +32,7 @@ const portfolioItems = [
   {
     id: 3,
     transition: {
-      transition: { duration: 2, delay: 1.0 },
+      transition: { duration: 2, delay: 2.0 },
       initial: { y: -300, opacity: 0 },
       animate: { y: 0, opacity: 1 },
       className: "z-10",
@@ -45,7 +45,7 @@ const portfolioItems = [
 ]
 
 const PortfolioPage = () => (
-  <div className="wrapper flex flex-col px-[41px] gap-1">
+  <div className="wrapper flex flex-col px-[15px] sm:px-[41px] gap-1">
     {portfolioItems.map(({ id, transition, imageSrc, descriptionText, websiteUrl, githubUrl }) => (
       <Transition key={id} {...transition}>
         <PortfolioItem
