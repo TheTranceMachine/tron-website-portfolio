@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import MainMenu from "@/app/(routes)/components/main-menu/main-menu";
+import MainMenu from "@/app/_components/main-menu/main-menu";
 import { newAlphabet } from "@/app/fonts";
-import "../globals.css";
-import CloudsBackground from "@/app/(routes)/components/clouds-background/couds-background";
+import "./globals.css";
+import CloudsBackground from "@/app/_components/clouds-background/couds-background";
 
 const inter = Inter({ subsets: ["latin"] });
 

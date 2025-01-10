@@ -1,5 +1,5 @@
 import Transition from "@/app/Transition";
-import PortfolioItem from "../components/portfolio/portfolio-item";
+import PortfolioItem from "../../_components/portfolio/portfolio-item";
 import { init } from "next/dist/compiled/webpack/webpack";
 
 const portfolioItems = [
@@ -44,19 +44,19 @@ const portfolioItems = [
   }
 ]
 
-const PortfolioPage = () => (
-  <div className="wrapper flex flex-col px-[15px] sm:px-[41px] gap-1">
-    {portfolioItems.map(({ id, transition, imageSrc, descriptionText, websiteUrl, githubUrl }) => (
-      <Transition key={id} {...transition}>
-        <PortfolioItem
-          imageSrc={imageSrc}
-          descriptionText={descriptionText}
-          websiteUrl={websiteUrl}
-          githubUrl={githubUrl}
-        />
-      </Transition>
-    ))}
-  </div>
-)
-
-export default PortfolioPage
+export default function PortfolioPage() {
+  return (
+    <div className="wrapper flex flex-col px-[15px] sm:px-[41px] gap-1">
+      {portfolioItems.map(({ id, transition, imageSrc, descriptionText, websiteUrl, githubUrl }) => (
+        <Transition key={id} {...transition}>
+          <PortfolioItem
+            imageSrc={imageSrc}
+            descriptionText={descriptionText}
+            websiteUrl={websiteUrl}
+            githubUrl={githubUrl}
+          />
+        </Transition>
+      ))}
+    </div>
+  )
+};

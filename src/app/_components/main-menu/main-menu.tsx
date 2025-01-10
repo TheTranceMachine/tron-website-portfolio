@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
-import Transition from "../../../Transition";
+import Transition from "../../Transition";
 import MainMenuLinks from "./main-menu-links";
 import SocialLinks from "./social-links";
 

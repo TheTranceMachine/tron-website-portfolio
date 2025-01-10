@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Link from 'next/link'
-import { newAlphabet } from "../../../fonts";
+import { newAlphabet } from "../../fonts";
 
 const links = [
   { id: 0, name: 'Home', href: '/home' },
