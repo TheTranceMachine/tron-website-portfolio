@@ -1,5 +1,8 @@
-const TimelineItem = ({ position }) => {
+const TimelineItem = ({ itemPosition, company, location, date, title }) => {
   const container = `
+    max-[425px]:pl-14
+    max-[425px]:pr-5
+    max-[425px]:before:left-[46px]
     max-[600px]:pl-5
     max-[600px]:pr-0
     max-[600px]:w-full 
@@ -15,9 +18,9 @@ const TimelineItem = ({ position }) => {
     max-[600px]:before:border-r-tron-300
     max-[600px]:before:border-b-transparent
     max-[600px]:before:border-l-transparent
+    min-[600px]:w-1/2
     py-2 
     px-10 
-    min-[600px]:w-1/2
     relative 
     bg-inherit
     after:content-[''] 
@@ -25,8 +28,8 @@ const TimelineItem = ({ position }) => {
     after:w-6
     after:h-6
     after:-right-[12px] 
-    after:bg-white 
-    after:border-gray-400
+    after:bg-tron-400  
+    after:border-tron-300 
     after:border-solid 
     after:border-[4px] 
     after:top-4
@@ -35,6 +38,8 @@ const TimelineItem = ({ position }) => {
   `;
 
   const bothSides = `
+    max-[425px]:after:left-[19px] 
+    max-[600px]:after:-left-[22px] 
     before:absolute 
     before:z-10 
     before:h-0 
@@ -44,7 +49,6 @@ const TimelineItem = ({ position }) => {
   `;
 
   const left = `
-    max-[600px]:after:-left-[22px] 
     left-0 
     before:border-tron-300 
     before:border-solid 
@@ -60,7 +64,6 @@ const TimelineItem = ({ position }) => {
   `;
 
   const right = `
-    max-[600px]:after:-left-[22px] 
     max-[600px]:left-0
     left-1/2 
     after:-left-[12px] 
@@ -78,10 +81,16 @@ const TimelineItem = ({ position }) => {
   `;
 
   return (
-    <div className={`timeline__container ${container} ${position} ${position === "left" ? left : right} ${bothSides}`}>
-      <div className="timeline__container__content relative bg-tron-300 py-5 px-7 rounded-md">
-        <h2>Title Left</h2>
-        <p>Test Left</p>
+    <div className={`${container} ${itemPosition} ${itemPosition === "left" ? left : right} ${bothSides}`}>
+      <div className="relative bg-tron-300 rounded-md drop-shadow-lg shadow-black">
+        <div className="py-2 px-4 text-sm border-b border-slate-400/30">{date}</div>
+        <div className="py-2 px-4 border-t border-slate-100/30">
+          <div className="text-lg py-3">{title}</div>
+        </div>
+        <div className="flex items-baseline bg-slate-600/50 text-white font-thin text-sm rounded-b-md drop-shadow-2xl shadow-black">
+          <div className="py-2 px-4 border-r border-r-slate-500/40">{company}</div>
+          <div className="py-2 px-4 border-l border-l-slate-200/30">{location}</div>
+        </div>
       </div>
     </div>
   );

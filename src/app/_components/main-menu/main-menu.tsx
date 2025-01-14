@@ -1,20 +1,28 @@
+import { useState } from "react";
 import Image from "next/image";
-import { useMediaQuery } from 'react-responsive';
 import Transition from "../../Transition";
 import MainMenuLinks from "./main-menu-links";
 import SocialLinks from "./social-links";
 
-export default function MainMenu({ setMenuAnimationCompletion }) {
-  const isMobile = useMediaQuery({ maxWidth: 450 });
+const MainMenu = ({ setMenuAnimationCompletion, isMobile }) => {
+  const [customClassName, setCustomClassName] = useState<string>("");
+  const animationComplete = () => {
+    setCustomClassName("z-50 relative");
+    setMenuAnimationCompletion(true);
+  };
+
   return (
     <Transition
       initial={{ y: -62 }}
       animate={{ y: 0 }}
       transition={{ duration: 1 }}
-      onComplete={() => setMenuAnimationCompletion(true)}
+      onComplete={animationComplete}
+      className={customClassName}
     >
       <div className="flex gap-3">
-        <div className="main-menu absolute z-50 top-[115px] sm:top-[265px] md:top-[265px] lg:top-[330px] w-[300px] sm:w-[712px] md:w-[712px] lg:w-[882px] left-[0px] sm:left-[25px] md:left-[25px] lg:left-[41px] px-3 flex sm:justify-between justify-center">
+        <div
+          className={`main-menu absolute z-50 ${isMobile ? "top-[107px]" : "top-[115px]"} sm:top-[87px] md:top-[258px] lg:top-[330px] w-[300px] sm:w-[712px] md:w-[712px] lg:w-[882px] left-[0px] sm:left-[25px] md:left-[25px] lg:left-[41px] px-3 flex sm:justify-between justify-center`}
+        >
           <MainMenuLinks />
           {!isMobile && <SocialLinks />}
         </div>
@@ -30,4 +38,6 @@ export default function MainMenu({ setMenuAnimationCompletion }) {
       </div>
     </Transition>
   );
-}
+};
+
+export default MainMenu;
