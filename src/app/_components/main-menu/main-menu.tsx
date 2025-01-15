@@ -27,7 +27,7 @@ const MainMenu = ({ setMenuAnimationCompletion, isMobile }) => {
           {!isMobile && <SocialLinks />}
         </div>
         <Image
-          src="/images/tron-website-radiator2-test.png"
+          src="/images/tron-website-radiator-menu.png"
           alt="Radiator2"
           width={964}
           height={408}
