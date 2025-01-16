@@ -4,7 +4,12 @@ import Transition from "../../Transition";
 import MainMenuLinks from "./main-menu-links";
 import SocialLinks from "./social-links";
 
-const MainMenu = ({ setMenuAnimationCompletion, isMobile }) => {
+type MainMenuTypes = {
+  setMenuAnimationCompletion: (val: boolean) => void;
+  isMobile: boolean;
+};
+
+const MainMenu = ({ setMenuAnimationCompletion, isMobile }: MainMenuTypes) => {
   const [customClassName, setCustomClassName] = useState<string>("");
   const animationComplete = () => {
     setCustomClassName("z-50 relative");

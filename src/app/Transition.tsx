@@ -3,22 +3,15 @@
 import { motion } from "framer-motion";
 
 type TransitionProps = {
-  children: React.ReactNode
-  initial: { y: number, opacity: number }
-  animate: { y: number, opacity: number }
-  transition: { duration: number }
-  onComplete?: () => void
-  className?: string
+  children: React.ReactNode;
+  initial: { y: number; opacity?: number };
+  animate: { y: number; opacity?: number };
+  transition: { duration: number };
+  onComplete?: () => void;
+  className?: string;
 };
 
-const Transition = ({
-  children,
-  initial,
-  animate,
-  transition,
-  onComplete,
-  className,
-}: TransitionProps) => (
+const Transition = ({ children, initial, animate, transition, onComplete, className }: TransitionProps) => (
   <motion.div
     initial={initial}
     animate={animate}

@@ -1,4 +1,12 @@
-const TimelineItem = ({ itemPosition, company, location, date, title }) => {
+type TimelineItemTypes = {
+  itemPosition: string;
+  company: string;
+  location: string;
+  date: string;
+  title: string;
+};
+
+const TimelineItem = ({ itemPosition, company, location, date, title }: TimelineItemTypes) => {
   const container = `
     max-[425px]:pl-14
     max-[425px]:pr-5
