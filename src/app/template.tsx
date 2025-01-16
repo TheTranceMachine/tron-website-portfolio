@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import MainMenu from "@/app/_components/main-menu/main-menu";
 import { newAlphabet } from "@/app/fonts";
@@ -50,6 +51,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           />
           <MainMenu setMenuAnimationCompletion={setMenuAnimationCompletion} isMobile={isMobile} />
           {menuAnimationCompletion && children}
+          <Analytics />
         </div>
       </main>
     </>

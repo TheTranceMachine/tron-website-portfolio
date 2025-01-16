@@ -13,6 +13,7 @@
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.12.1",
     "@types/nodemailer": "^6.4.17",
+    "@vercel/analytics": "^1.4.1",
     "classnames": "^2.5.1",
     "framer-motion": "^11.3.21",
     "next": "^15.0.3",
