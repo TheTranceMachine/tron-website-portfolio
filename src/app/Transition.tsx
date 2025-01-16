@@ -6,7 +6,7 @@ type TransitionProps = {
   children: React.ReactNode;
   initial: { y: number; opacity?: number };
   animate: { y: number; opacity?: number };
-  transition: { duration: number };
+  transition: { duration: number; delay?: number };
   onComplete?: () => void;
   className?: string;
 };

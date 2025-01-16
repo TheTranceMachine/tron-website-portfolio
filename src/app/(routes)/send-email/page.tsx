@@ -2,7 +2,17 @@ import Link from "next/link";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
-export default async function SendEmailPage({ searchParams }: { searchParams: { [key: string]: string | undefined } }) {
+type Params = {
+  name: string;
+  email: string;
+  message: string | string[];
+} & Promise<Mail.Options>;
+
+export default async function SendEmailPage({
+  searchParams,
+}: {
+  searchParams: Params
+}) {
   const transport = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -16,7 +26,7 @@ export default async function SendEmailPage({ searchParams }: { searchParams: { 
     to: process.env.NEXT_PUBLIC_GMAIL_EMAIL,
     // cc: email, (uncomment this line if you want to send a copy to the sender)
     subject: `Portfolio website message from ${searchParams.name} (${searchParams.email})`,
-    text: searchParams.message,
+    text: Array.isArray(searchParams.message) ? searchParams.message.join(", ") : searchParams.message,
   };
 
   const sendMailPromise = () =>
@@ -52,7 +62,7 @@ export default async function SendEmailPage({ searchParams }: { searchParams: { 
           <div className="contact-page justify-self-center mt-4 sm:w-1/2">
             <div className="text-2xl font-bold mb-6 text-gray-600 antialiased">Email error!</div>
             <div className="text-gray-600 antialiased">
-              I'm sorry, something went wrong.
+              I&apos;m sorry, something went wrong.
               <Link href="/contact" className="text-orange-500">
                 Try again
               </Link>{" "}

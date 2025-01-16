@@ -2,8 +2,8 @@ import cx from "classnames";
 
 type ButtonTypes = {
   children: React.ReactNode;
-  props: React.ButtonHTMLAttributes<HTMLButtonElement>;
-};
+  className?: string;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({ children, ...props }: ButtonTypes) => (
   <button

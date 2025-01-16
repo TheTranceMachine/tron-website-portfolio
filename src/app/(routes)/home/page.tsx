@@ -29,10 +29,10 @@ export default function HomePage() {
             <div className="home-page__content text-gray-600 antialiased">
               <h1 className={`text-2xl font-bold mb-4 ${playwrite.className}`}>Welcome to my portfolio!</h1>
               <p className={`text-base leading-8 ${playwrite.className}`}>
-                I consider myself a creative technocrat. I want to see a future where technology brings out what's best
+                I consider myself a creative technocrat. I want to see a future where technology brings out what&apos;s best
                 in humanity. By improving our technology, we can live better lives, in a cleaner environment and
                 stronger community. I strive every day to improve my skills, learn something new, and engage in
-                meaningful conversations. Let's build the future together!
+                meaningful conversations. Let&apos;s build the future together!
               </p>
               <div className={`home-page__signature mt-4 ${playwrite.className} justify-self-end`}>Greg Smolin</div>
             </div>
