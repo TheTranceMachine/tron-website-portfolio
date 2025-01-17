@@ -10,11 +10,14 @@ export default function SocialLinks() {
     border-4 
     border-slate-500/40 
     shadow-inner 
-    shadow-black 
+    shadow-gray-800
     overflow-hidden 
     content-center 
     text-slate-500 
-    hover:shadow-none
+    hover:shadow-none 
+    transition-all
+    ease-in-out 
+    duration-200
   `;
 
   return (
